@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark" aria-label="navbar">
+	<div class="container-fluid">
+		<a class="navbar-brand col-md-9">
+			<img src="https://w7.pngwing.com/pngs/336/946/png-transparent-avatar-user-medicine-surgery-patient-avatar-face-heroes-head.png" class="avatar img-responsive">
+			<span class="header-username">{{current_user.get_name()}}</span>
+		</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarsExample02">
+			<ul class="navbar-nav me-auto">
+				<li class="nav-item col-md-6">
+					<a class="nav-link active" aria-current="page" href="/">Главная</a>
+				</li>
+				<li class="nav-item nav-item col-md-7">
+					<a class="nav-link active" aria-current="page" href="/profile">Профиль</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link active" aria-current="page" href="/logout">Выход</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>

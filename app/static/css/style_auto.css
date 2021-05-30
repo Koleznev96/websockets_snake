@@ -1,0 +1,19 @@
+/* kelly-slab-regular - latin_cyrillic */
+@font-face {
+  font-family: 'Kelly Slab';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+       url('../fonts/kelly-slab-v11-latin_cyrillic-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/kelly-slab-v11-latin_cyrillic-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+
+.box-center{
+    width: 450px; /*задаем ширину блока*/
+    height:290px; /*задаем высоту блока*/
+    transform: translate(-50%, -50%);
+    position: absolute; 
+    top: 50%; 
+    left: 50%;
+}

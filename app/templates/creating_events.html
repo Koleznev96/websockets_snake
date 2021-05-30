@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Game place</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../static/css/navbar.css">
+    <link rel="stylesheet" href="../static/css/flash_styles.css">
+</head>
+<body>
+    {% include "nav.html" %}
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-9">
+                    <h1 style="margin-left: 420px">Создание события</h1>
+                    <div class="box_create" style="margin-left: 250px">
+                        <div class="row d-flex">
+                            <p></p>
+                            <p></p>
+                            <form action="/creating_events" method="post" class="d-grid gap-2 mx-auto">
+                                {{ form.csrf_token() }}
+                                <div class="form-group row mx-2">
+                                    <label for="inputEmail" class="col-sm-3 col-form-label" style="font-size: 14px; margin-left: 20px">
+                                        {{ form.name.label() }}
+                                    </label>
+                                    <div class="col-sm-8">
+                                        {{ form.name(class_="form-control") }}
+                                    </div>
+                                </div>
+                                <div class="form-group row mx-2">
+                                    <label for="inputPassword" class="col-sm-3 col-form-label" style="font-size: 14px; margin-left: 20px">
+                                        {{ form.organizer.label() }}
+                                    </label>
+                                    <div class="col-sm-8">
+                                        {{ form.organizer(class_="form-control") }}
+                                    </div>
+                                </div>
+                                <div class="form-group row mx-2">
+                                    <label for="inputPassword" class="col-sm-3 col-form-label" style="font-size: 14px; margin-left: 20px">
+                                        {{ form.type_game.label() }}
+                                    </label>
+                                    <div class="col-sm-8">
+                                        {{ form.type_game(class_="form-control") }}
+                                    </div>
+                                </div>
+                                <div class="form-group row mx-2">
+                                    <label for="inputPassword" class="col-sm-3 col-form-label" style="font-size: 14px; margin-left: 20px">
+                                        {{ form.mode_game.label() }}
+                                    </label>
+                                    <div class="col-sm-8">
+                                        {{ form.mode_game(class_="form-control") }}
+                                    </div>
+                                </div>
+                                <div class="form-group row mx-2">
+                                    <label for="inputPassword" class="col-sm-3 col-form-label" style="font-size: 14px; margin-left: 20px">
+                                        {{ form.max_count_users.label() }}
+                                    </label>
+                                    <div class="col-sm-8">
+                                        {{ form.max_count_users(class_="form-control") }}
+                                    </div>
+                                </div>
+                                <div class="form-group row mx-2">
+                                    <label for="inputPassword" class="col-sm-3 col-form-label" style="font-size: 14px; margin-left: 20px">
+                                        {{ form.date.label() }}
+                                    </label>
+                                    <div class="col-sm-8">
+                                        {{ form.date(class_="form-control") }}
+                                    </div>
+                                </div>
+                                <div class="form-group row mx-2">
+                                    <label for="inputPassword" class="col-sm-3 col-form-label" style="font-size: 14px; margin-left: 20px">
+                                        {{ form.time.label() }}
+                                    </label>
+                                    <div class="col-sm-8">
+                                        {{ form.time(class_="form-control") }}
+                                    </div>
+                                </div>
+                                 <div class="form-group row mx-2">
+                                    <label for="inputPassword" class="col-sm-3 col-form-label" style="font-size: 14px; margin-left: 20px">
+                                        {{ form.duration.label() }}
+                                    </label>
+                                    <div class="col-sm-8">
+                                        {{ form.duration(class_="form-control") }}
+                                    </div>
+                                </div>
+                                <div class="form-group row mx-2">
+                                    <label for="inputPassword" class="col-sm-3 col-form-label" style="font-size: 14px; margin-left: 20px">
+                                        {{ form.record_avail.label() }}
+                                    </label>
+                                    <div class="col-sm-1">
+                                        {{ form.record_avail(class_="form-check-label") }}
+                                    </div>
+                                </div>
+                                <div class="form-group row mx-2">
+                                    <label for="inputPassword" class="col-sm-3 col-form-label" style="font-size: 14px; margin-left: 20px">
+                                        {{ form.broadcast_avail.label() }}
+                                    </label>
+                                    <div class="col-sm-1">
+                                        {{ form.broadcast_avail(class_="form-check-label") }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                {% with messages = get_flashed_messages(with_categories=true) %}
+                                    {% if messages %}
+                                        {% for category, message in messages %}
+                                            <div class="{{ category }} col-12">{{ message }}</div>
+                                        {% endfor %}
+                                    {% endif %}
+                                {% endwith %}
+                                </div>
+                                <div class="d-grid gap-2 col-3 mx-auto gy-3">
+                                    {{ form.submit_btn(class_="btn btn-dark") }}
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                    <p class="text-block">
+                        Событие создано!
+                  </p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ок</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </main>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+</body>
+</html>

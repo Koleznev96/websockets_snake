@@ -1,0 +1,73 @@
+body{
+    padding-bottom: 20px;
+}
+
+.navbar{
+    margin-bottom: 20px;
+}
+
+.box_inf{
+    width: 350px; /*задаем ширину блока*/
+    height:250px; /*задаем высоту блока*/
+    background-color:#F3F3F3;
+    border-style: solid;
+    border-width: 2px;
+    border-color:#C4C4C4;
+    position: absolute; 
+}
+
+.text-block {
+margin-left:20px;
+}
+
+.box_count{
+    width: 250px; /*задаем ширину блока*/
+    height:350px; /*задаем высоту блока*/
+    background-color:#EEEEEE;
+    border-style: solid;
+    border-width: 2px;
+    border-color:#C4C4C4;
+    margin-left: 100px;
+    position: absolute; 
+}
+
+.box_bcast{
+    width: 650px; /*задаем ширину блока*/
+    height:350px; /*задаем высоту блока*/
+    background-color:#EEEEEE;
+    border-style: solid;
+    border-width: 2px;
+    border-color:#C4C4C4;
+    position: absolute; 
+}
+
+.btn_exit{
+    
+    transform: translate(-50%, -50%);
+    position: absolute; 
+    top: 85%; 
+    left: 13%;
+}
+
+.avatar{
+    width: 40px; /*задаем ширину блока*/
+    height:40px;
+    border-radius: 50%;
+}
+
+.avatar_b{
+    width: 100px; /*задаем ширину блока*/
+    height:100px;
+    border-radius: 50%;
+}
+
+.box_setting{
+    width: 650px; /*задаем ширину блока*/
+    height:350px; /*задаем высоту блока*/
+    background-color:#EEEEEE;
+    border-style: solid;
+    border-width: 2px;
+    border-color:#C4C4C4;
+    position: absolute; 
+}
+    

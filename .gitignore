@@ -1,0 +1,6 @@
+/.idea
+/venv
+*__pycache__*
+/app/main/rooms
+activate_venv.bat
+deactivate_venv.bat
